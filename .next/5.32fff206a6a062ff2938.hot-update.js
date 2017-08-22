@@ -1,8 +1,4 @@
-module.exports =
-
-        __NEXT_REGISTER_PAGE('/', function() {
-          var comp = 
-      webpackJsonp([4],{
+webpackHotUpdate(5,{
 
 /***/ "./node_modules/@babel/runtime/core-js/json/stringify.js":
 /***/ (function(module, exports, __webpack_require__) {
@@ -888,38 +884,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ "./node_modules/webpack/buildin/harmony-module.js":
-/***/ (function(module, exports) {
-
-module.exports = function(originalModule) {
-	if(!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true,
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-
-/***/ "./pages/index.js":
+/***/ "./pages/about.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -928,7 +893,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
-var _jsxFileName = "/home/emsi/Public/React/super-next-js/pages/index.js";
+var _jsxFileName = "/home/emsi/Public/React/super-next-js/pages/about.js";
 
 
 (function () {
@@ -939,14 +904,14 @@ var _jsxFileName = "/home/emsi/Public/React/super-next-js/pages/index.js";
 
 
 
-var Index = function Index() {
+var About = function About() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
-    href: "/about",
+    href: "/index",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5
@@ -956,15 +921,15 @@ var Index = function Index() {
       fileName: _jsxFileName,
       lineNumber: 6
     }
-  }, "Go to About")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+  }, "Go to Index")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     }
-  }, "Hello Super"));
+  }, "About Page"));
 };
 
-var _default = Index;
+var _default = About;
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
 
@@ -977,8 +942,8 @@ var _default = Index;
     return;
   }
 
-  reactHotLoader.register(Index, "Index", "/home/emsi/Public/React/super-next-js/pages/index.js");
-  reactHotLoader.register(_default, "default", "/home/emsi/Public/React/super-next-js/pages/index.js");
+  reactHotLoader.register(About, "About", "/home/emsi/Public/React/super-next-js/pages/about.js");
+  reactHotLoader.register(_default, "default", "/home/emsi/Public/React/super-next-js/pages/about.js");
   leaveModule(module);
 })();
 
@@ -999,22 +964,11 @@ var _default = Index;
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/about")
   
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./pages/index.js");
-
-
 /***/ })
 
-},[3])
-          return { page: comp.default }
-        })
-      ;
-//# sourceMappingURL=index.js.map
+})
+//# sourceMappingURL=5.32fff206a6a062ff2938.hot-update.js.map
