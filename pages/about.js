@@ -3,7 +3,7 @@ import Link from 'next/link'
 const About = () => (
   <div>
     <Link href='/index'>
-      <a>Go to Index</a>
+      <button>Go to Index</button>
     </Link>
     <p>About Page</p>
   </div>
