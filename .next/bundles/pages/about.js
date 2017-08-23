@@ -951,7 +951,7 @@ var About = function About() {
       fileName: _jsxFileName,
       lineNumber: 5
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6

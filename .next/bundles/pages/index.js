@@ -951,7 +951,7 @@ var Index = function Index() {
       fileName: _jsxFileName,
       lineNumber: 5
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
     style: {
       fontSize: 20
     },
