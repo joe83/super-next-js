@@ -952,6 +952,9 @@ var Index = function Index() {
       lineNumber: 5
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    style: {
+      fontSize: 20
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
