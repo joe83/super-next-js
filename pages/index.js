@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import Header from '../components/Header'
+import SuperLayout from '../components/SuperLayout'
 
 const Index = () => (
-  <div>
-    <Header />
+  <SuperLayout>
     <p>Hello Super</p>
-  </div>
+  </SuperLayout>
 )
 
 export default Index
