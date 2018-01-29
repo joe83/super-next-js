@@ -4,7 +4,7 @@ module.exports =
           var comp = 
       webpackJsonp([4],{
 
-/***/ "./comps/Header.js":
+/***/ "./components/Header.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,7 +12,7 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
-var _jsxFileName = "/home/emsi/Public/React/super-next-js/comps/Header.js";
+var _jsxFileName = "/home/emsi/Public/React/super-next-js/components/Header.js";
 
 
 (function () {
@@ -72,9 +72,9 @@ var _default = Header;
     return;
   }
 
-  reactHotLoader.register(linkStyle, "linkStyle", "/home/emsi/Public/React/super-next-js/comps/Header.js");
-  reactHotLoader.register(Header, "Header", "/home/emsi/Public/React/super-next-js/comps/Header.js");
-  reactHotLoader.register(_default, "default", "/home/emsi/Public/React/super-next-js/comps/Header.js");
+  reactHotLoader.register(linkStyle, "linkStyle", "/home/emsi/Public/React/super-next-js/components/Header.js");
+  reactHotLoader.register(Header, "Header", "/home/emsi/Public/React/super-next-js/components/Header.js");
+  reactHotLoader.register(_default, "default", "/home/emsi/Public/React/super-next-js/components/Header.js");
   leaveModule(module);
 })();
 
@@ -1007,7 +1007,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__comps_Header__ = __webpack_require__("./comps/Header.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Header__ = __webpack_require__("./components/Header.js");
 var _jsxFileName = "/home/emsi/Public/React/super-next-js/pages/about.js";
 
 
@@ -1026,7 +1026,7 @@ var About = function About() {
       fileName: _jsxFileName,
       lineNumber: 5
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__comps_Header__["a" /* default */], {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_Header__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
