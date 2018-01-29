@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import Header from '../components/Header'
+import SuperLayout from '../components/SuperLayout'
 
 const About = () => (
-  <div>
-    <Header />
+  <SuperLayout>
     <p>About Page</p>
-  </div>
+  </SuperLayout>
 )
 
 export default About
