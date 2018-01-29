@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Header from '../comps/Header'
+import Header from '../components/Header'
 
 const Index = () => (
   <div>
