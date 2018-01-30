@@ -118,7 +118,7 @@ var SuperLayout = function SuperLayout(props) {
       fileName: _jsxFileName,
       lineNumber: 11
     }
-  }), props.children);
+  }));
 };
 
 var _default = SuperLayout;

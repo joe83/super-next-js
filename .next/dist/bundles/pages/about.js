@@ -152,7 +152,7 @@ var SuperLayout = function SuperLayout(props) {
       fileName: _jsxFileName,
       lineNumber: 11
     }
-  }), props.children);
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (SuperLayout);
