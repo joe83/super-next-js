@@ -9,6 +9,7 @@ const layoutStyle = {
 const SuperLayout = (props) => (
   <div style={layoutStyle}>
     <Header />
+    {props.children}
   </div>
 )
 
