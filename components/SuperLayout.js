@@ -7,7 +7,6 @@ const layoutStyle = {
 }
 
 const SuperLayout = (props) => {
-  console.log(props);
   return (
     <div style={layoutStyle}>
       <Header />
