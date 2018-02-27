@@ -12,7 +12,7 @@ app.prepare()
     appServer.get('/p/:slug', (request, result) => {
       const originPage = '/post'
       console.log(request.params)
-      const queryParams = { title: `Dynamic from slug: ${request.params.slug}` }
+      const queryParams = { slug: `Dynamic from slug: ${request.params.slug}` }
       app.render(request, result, originPage, queryParams)
     })
 
