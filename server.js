@@ -9,9 +9,9 @@ app.prepare()
   .then(() => {
     const appServer = express()
 
-    appServer.get('/p/:slug', (request, result) => {
+    appServer.get('/p/:id', (request, result) => {
       const originPage = '/post'
-      const queryParams = { slug: `${request.params.slug}` }
+      const queryParams = { id: `${request.params.id}` }
       app.render(request, result, originPage, queryParams)
     })
 
