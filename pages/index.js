@@ -6,8 +6,8 @@ const Index = () => (
   <SuperLayout>
     <h1>Hello Super</h1>
     <ul>
-      <PostLink slug="dynamic-one" title="Dynamic One"/>
-      <PostLink slug="dynamic-two" title="Dynamic Two"/>
+      <PostLink id="dynamic-one" title="Dynamic One"/>
+      <PostLink id="dynamic-two" title="Dynamic Two"/>
     </ul>
   </SuperLayout>
 )
