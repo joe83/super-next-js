@@ -8,8 +8,9 @@ const Index = (props) => {
     <SuperLayout>
       <h1>Hello Super</h1>
       <ul>
-        <PostLink id="dynamic-one" title="Dynamic One"/>
-        <PostLink id="dynamic-two" title="Dynamic Two"/>
+        {props.data.map(({show}) => (
+          <PostLink id={`${show.id}`} key={`${show.id}`} title={`${show.name}`}/>
+        ))}
       </ul>
     </SuperLayout>
   )
