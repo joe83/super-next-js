@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import SuperLayout from '../components/SuperLayout'
+import fetch from 'isomorphic-unfetch'
 import PostLink from '../components/PostLink'
+import SuperLayout from '../components/SuperLayout'
 
 const Index = () => (
   <SuperLayout>
