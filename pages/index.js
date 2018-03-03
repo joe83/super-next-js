@@ -18,6 +18,8 @@ Index.getInitialProps = async function() {
   const data = await respond.json()
 
   console.log(data)
+
+  return {}
 }
 
 export default Index
