@@ -13,4 +13,11 @@ const Index = () => (
   </SuperLayout>
 )
 
+Index.getInitialProps = async function() {
+  const respond = await fetch('https://api.tvmaze.com/search/shows?q=casper')
+  const data = await respond.json()
+
+  console.log(data)
+}
+
 export default Index
