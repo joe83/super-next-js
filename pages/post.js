@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch'
 import SuperLayout from '../components/SuperLayout'
 
 const Post = (props) => (
