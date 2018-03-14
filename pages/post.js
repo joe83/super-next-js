@@ -1,16 +1,25 @@
 import fetch from 'isomorphic-unfetch'
+import { withRouter } from 'next/router'
 import SuperLayout from '../components/SuperLayout'
 
-const Post = (props) => (
-  <SuperLayout>
-    <h1>{props.url.query.id}</h1>
-    <p>This is post page</p>
-  </SuperLayout>
-)
-
-Post.getInitialProps = (context) => {
-  console.log(context)
-  return {}
+const Post = (props) => {
+  return (
+    <SuperLayout>
+      <h1>{props.data.name}</h1>
+      <img src={props.data.image.medium}/>
+      <p>{props.data.summary.replace(/<[/]?p>/g, '')}</p>
+    </SuperLayout>
+  )
 }
 
-export default Post
+Post.getInitialProps = async (context) => {
+  const { id } = context.query
+  const respond = await fetch(`https://api.tvmaze.com/shows/${id}`)
+  const data = await respond.json()
+
+  return {
+    data
+  }
+}
+
+export default withRouter(Post)
