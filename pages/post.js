@@ -8,4 +8,9 @@ const Post = (props) => (
   </SuperLayout>
 )
 
+Post.getInitialProps = (context) => {
+  console.log(context)
+  return {}
+}
+
 export default Post
