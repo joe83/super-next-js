@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import { withRouter } from 'next/router'
 import PostLink from '../components/PostLink'
 import SuperLayout from '../components/SuperLayout'
 
@@ -25,4 +26,4 @@ Index.getInitialProps = async function() {
   }
 }
 
-export default Index
+export default withRouter(Index)
