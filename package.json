@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
-    "app": "node server"
+    "app": "node server",
+    "build": "next build",
+    "export": "next export"
   },
   "keywords": [],
   "author": "",
