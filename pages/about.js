@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { withRouter } from 'next/router'
 import SuperLayout from '../components/SuperLayout'
 
 const About = () => (
@@ -7,4 +8,4 @@ const About = () => (
   </SuperLayout>
 )
 
-export default About
+export default withRouter(About)
