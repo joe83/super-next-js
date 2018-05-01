@@ -7,7 +7,7 @@ const Post = (props) => {
     <SuperLayout>
       <h1>{props.data.name}</h1>
       <img src={props.data.image.medium}/>
-      <p>{props.data.summary.replace(/<[/]?p>/g, '')}</p>
+      <div dangerouslySetInnerHTML={{ __html: props.data.summary }} />
     </SuperLayout>
   )
 }
