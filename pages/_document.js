@@ -7,14 +7,19 @@ export default class extends Document {
   }
 
   render () {
-    return (<html>
-      <Head>
-        <title>Super Next</title>
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </html>)
+    return (
+      <html>
+        <Head>
+          <title>Super Next</title>
+          <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css"/>
+          <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css"/>
+          <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"/>
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    )
   }
 }
