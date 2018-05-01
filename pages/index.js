@@ -7,28 +7,17 @@ import SuperLayout from '../components/SuperLayout'
 const Index = (props) => {
   return (
     <SuperLayout>
-      <h1>Hello Super</h1>
       <ul>
         {props.data.map(({show}) => (
           <PostLink id={`${show.id}`} key={`${show.id}`} title={`${show.name}`}/>
         ))}
       </ul>
-      <style jsx>{`
-      h1, a {
-        font-family: "Arial";
-      }
-
-      ul {
-        padding: 0;
-      }
-
-    `}</style>
     </SuperLayout>
   )
 }
 
 Index.getInitialProps = async function() {
-  const respond = await fetch('https://api.tvmaze.com/search/shows?q=casper')
+  const respond = await fetch('https://api.tvmaze.com/search/shows?q=sherlock')
   const data = await respond.json()
 
   return {
