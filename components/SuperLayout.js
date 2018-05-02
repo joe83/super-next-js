@@ -4,7 +4,7 @@ const SuperLayout = (props) => {
   return (
     <div className='container'>
       <div className='columns'>
-        <div className='column col-6 col-mx-auto'>
+        <div className='column col-6 col-mx-auto col-xs-12'>
           <Header />
           {props.children}
         </div>

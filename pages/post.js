@@ -15,10 +15,10 @@ const Post = (props) => {
         </div>
         <div className='card-body'>
           <div className='columns'>
-            <div className='column col-xs-4'>
+            <div className='column col-4 col-xs-12'>
               <img className='img-responsive' src={props.data.image.medium} />
             </div>
-            <div className='column col-xs-8'>
+            <div className='column col-8 col-xs-12'>
               <div dangerouslySetInnerHTML={{ __html: props.data.summary }} />
             </div>
           </div>
