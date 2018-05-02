@@ -64,7 +64,13 @@ class Index extends React.Component {
         <HelmetMeta title='Home'/>
         <div className='input-group'>
           <span className='input-group-addon'>Search by Movie Name</span>
-          <input type='text' className='form-input' onKeyPress={this._handleKeyPress} ref={input => this.search = input} onChange={this._handleInput}/>
+          <input
+            type='text'
+            className='form-input'
+            onKeyPress={this._handleKeyPress}
+            ref={input => this.search = input}
+            onChange={this._handleInput}
+          />
           <button className='btn btn-primary input-group-btn' onClick={this._handleSearch}>
             <i className='icon icon-search'></i>
           </button>
@@ -79,9 +85,14 @@ class Index extends React.Component {
                   <div className='loading loading-lg'></div>
                 </div>
               )
-            :
-            response.map(({id, show}) => (
-              <PostLink id={`${show.id}`} key={`${id}`} anjay={`${id}`} title={`${show.name}`} genre={`${show.genres[0]}`}/>
+              :
+              response.map((data) => (
+              <PostLink
+                id={`${data.show.id}`}
+                key={(data.id === undefined) ? data.show.id : data.id}
+                title={`${data.show.name}`}
+                genre={`${data.show.genres[0]}`}
+              />
             ))
           }
         </ul>
