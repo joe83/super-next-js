@@ -1,7 +1,9 @@
 # Super NextJS [demo](https://super-next.herokuapp.com/)
 > a NextJS base
 
-!['post'](https://screenshotscdn.firefoxusercontent.com/images/8d3ed597-552f-44d7-8020-02fc1c09ee3b.png)
+!['post'](https://screenshotscdn.firefoxusercontent.com/images/4d18155d-c8a0-43e8-ae6e-3cf2d68b6edb.png)
+
+!['post'](https://screenshotscdn.firefoxusercontent.com/images/d279568e-a0cb-437e-99ec-fbfb702a839a.png)
 
 ### todos
 - Search
