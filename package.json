@@ -4,10 +4,11 @@
   "description": "a Next JS based",
   "main": "index.js",
   "scripts": {
+    "heroku-post-build": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "app": "node server",
-    "start": "next start",
+    "start": "npm run prod",
     "build": "next build",
     "export": "next export",
     "prod": "NODE_ENV=production node server.js",
