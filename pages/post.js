@@ -2,19 +2,28 @@ import fetch from 'isomorphic-unfetch'
 import Helmet from 'react-helmet'
 import { withRouter } from 'next/router'
 import SuperLayout from '../components/SuperLayout'
+import HelmetMeta from '../components/HelmetMeta'
 
 const Post = (props) => {
   return (
     <SuperLayout>
-      <Helmet
-        title={`${props.title} | Super Next`}
-        meta={[
-          { property: 'og:title', content: props.title }
-        ]}
-      />
-      <h1>{props.title}</h1>
-      <img src={props.data.image.medium}/>
-      <div dangerouslySetInnerHTML={{ __html: props.data.summary }} />
+      <HelmetMeta title={props.data.name}/>
+      <div className='card'>
+        <div className='card-header'>
+          <div class='card-title h5'>{props.data.name}</div>
+          <div class='card-subtitle text-gray'>{props.data.type}</div>
+        </div>
+        <div className='card-body'>
+          <div className='columns'>
+            <div className='column col-xs-4'>
+              <img src={props.data.image.medium}/>
+            </div>
+            <div className='column col-xs-8'>
+              <div dangerouslySetInnerHTML={{ __html: props.data.summary }} />
+            </div>
+          </div>
+        </div>
+      </div>
     </SuperLayout>
   )
 }
@@ -23,12 +32,9 @@ Post.getInitialProps = async (context) => {
   const { id } = context.query
   const respond = await fetch(`https://api.tvmaze.com/shows/${id}`)
   const data = await respond.json()
-  if (context.req) {
-    Helmet.renderStatic();
-  }
+
   return {
-    data,
-    title: data.name
+    data
   }
 }
 
