@@ -26,7 +26,6 @@ class Index extends React.Component {
     })
   }
 
-
   _handleSearch = async () => {
     const respond = await fetch(`https://api.tvmaze.com/search/shows?q=${this.state.searchQuery}`)
     const data = await respond.json()
@@ -34,6 +33,7 @@ class Index extends React.Component {
       queryData: data
     })
   }
+
   _handleKeyPress = (e) => {
     if (e.key === 'Enter') {
      this._handleSearch()
