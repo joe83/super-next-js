@@ -48,7 +48,7 @@ class Index extends React.Component {
 
   static async getInitialProps() {
     const dayNow = dayjs().format('YYYY-MM-DD');
-    const respond = await fetch(`http://api.tvmaze.com/schedule?country=US&date=${dayNow}`)
+    const respond = await fetch(`https://api.tvmaze.com/schedule?country=US&date=${dayNow}`)
     const data = await respond.json()
     return { data }
   }
