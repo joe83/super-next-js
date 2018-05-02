@@ -3,7 +3,7 @@ import Link from 'next/link'
 const PostLink = (props) => (
   <li className='menu-item'>
     <Link as={`p/${props.id}`} href={`/post?id=${props.id}`}>
-      <a>{props.title}</a>
+      <a><i className='icon icon-arrow-right'></i> {props.title}</a>
     </Link>
   </li>
 )
