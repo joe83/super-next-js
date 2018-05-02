@@ -14,6 +14,7 @@ class Index extends React.Component {
     this._handleSearch = this._handleSearch.bind(this)
     this._handleKeyPress = this._handleKeyPress.bind(this)
     this.state = {
+      searchLoading: false,
       searchQuery: '',
       queryData: {}
     }
@@ -27,9 +28,13 @@ class Index extends React.Component {
   }
 
   _handleSearch = async () => {
+    this.setState({
+      searchLoading: true
+    })
     const respond = await fetch(`https://api.tvmaze.com/search/shows?q=${this.state.searchQuery}`)
     const data = await respond.json()
     this.setState({
+      searchLoading: false,
       queryData: data
     })
   }
@@ -43,10 +48,7 @@ class Index extends React.Component {
   static async getInitialProps() {
     const respond = await fetch('https://api.tvmaze.com/search/shows?q=sherlock')
     const data = await respond.json()
-
-    return {
-      data
-    }
+    return { data }
   }
 
   render() {
@@ -63,10 +65,18 @@ class Index extends React.Component {
           </button>
         </div>
         <ul className='menu'>
-          <li className='divider' data-content='Pick the Sherlock Movie'/>
+          <li className='divider' data-content='Pick the Movie'/>
           {
+            this.state.searchLoading
+            ?
+              (
+                <div className='centered'>
+                  <div className='loading loading-lg'></div>
+                </div>
+              )
+            :
             response.map(({show}) => (
-            <PostLink id={`${show.id}`} key={`${show.id}`} title={`${show.name}`}/>
+              <PostLink id={`${show.id}`} key={`${show.id}`} title={`${show.name}`} genre={`${show.genres[0]}`}/>
             ))
           }
         </ul>

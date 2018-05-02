@@ -11,7 +11,12 @@ const Post = (props) => {
       <div className='card'>
         <div className='card-header'>
           <div className='card-title h5'>{props.data.name}</div>
-          <div className='card-subtitle text-gray'>{props.data.type}</div>
+          <div className='card-subtitle text-gray'><kbd>{props.data.genres[0]}</kbd> {props.data.type} </div>
+          <div className='card-subtitle'>
+            <a className='button button-primary' href={`${props.data.url}`} target='_blank'>
+              <i className='icon icon-link'></i> Go to this movie
+            </a>
+          </div>
         </div>
         <div className='card-body'>
           <div className='columns'>
