@@ -10,13 +10,13 @@ const Post = (props) => {
       <HelmetMeta title={props.data.name}/>
       <div className='card'>
         <div className='card-header'>
-          <div class='card-title h5'>{props.data.name}</div>
-          <div class='card-subtitle text-gray'>{props.data.type}</div>
+          <div className='card-title h5'>{props.data.name}</div>
+          <div className='card-subtitle text-gray'>{props.data.type}</div>
         </div>
         <div className='card-body'>
           <div className='columns'>
             <div className='column col-xs-4'>
-              <img src={props.data.image.medium}/>
+              <img className='img-responsive' src={props.data.image.medium} />
             </div>
             <div className='column col-xs-8'>
               <div dangerouslySetInnerHTML={{ __html: props.data.summary }} />
