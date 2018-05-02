@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import dayjs from 'dayjs'
 import fetch from 'isomorphic-unfetch'
 import { withRouter } from 'next/router'
 import HelmetMeta from '../components/HelmetMeta'
@@ -46,14 +47,18 @@ class Index extends React.Component {
   }
 
   static async getInitialProps() {
-    const respond = await fetch('https://api.tvmaze.com/search/shows?q=sherlock')
+    const dayNow = dayjs().format('YYYY-MM-DD');
+    const respond = await fetch(`http://api.tvmaze.com/schedule?country=US&date=${dayNow}`)
     const data = await respond.json()
     return { data }
   }
 
   render() {
     const queryData = this.state.queryData
-    const response = (Object.keys(queryData).length === 0) ? this.props.data : queryData;
+    const isQueryData = (Object.keys(queryData).length === 0)
+    const response = isQueryData ? this.props.data : queryData;
+    const dayNow = dayjs().format('dddd, YYYY-MM-DD')
+    const miniTitle = isQueryData ? `Latest Movies in ${dayNow}` : `Search results for ${this.state.searchQuery}`
     return (
       <SuperLayout>
         <HelmetMeta title='Home'/>
@@ -65,7 +70,7 @@ class Index extends React.Component {
           </button>
         </div>
         <ul className='menu'>
-          <li className='divider' data-content='Pick the Movie'/>
+          <li className='divider' data-content={`${miniTitle}`}/>
           {
             this.state.searchLoading
             ?
@@ -75,8 +80,8 @@ class Index extends React.Component {
                 </div>
               )
             :
-            response.map(({show}) => (
-              <PostLink id={`${show.id}`} key={`${show.id}`} title={`${show.name}`} genre={`${show.genres[0]}`}/>
+            response.map(({id, show}) => (
+              <PostLink id={`${show.id}`} key={`${id}`} anjay={`${id}`} title={`${show.name}`} genre={`${show.genres[0]}`}/>
             ))
           }
         </ul>
