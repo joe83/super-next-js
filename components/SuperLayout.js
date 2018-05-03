@@ -1,4 +1,5 @@
 import Header from './Header'
+import Footer from './Footer'
 
 const SuperLayout = (props) => {
   return (
@@ -7,6 +8,7 @@ const SuperLayout = (props) => {
         <div className='column col-6 col-mx-auto col-xs-12'>
           <Header />
           {props.children}
+          <Footer />
         </div>
       </div>
     </div>
