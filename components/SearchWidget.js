@@ -40,7 +40,9 @@ class SearchWidget extends React.Component {
     }
 
     if (e.keyCode === 27) {
-      console.log('escaped')
+      this.setState({
+        queryData: {}
+      })
     }
   }
 
@@ -50,13 +52,15 @@ class SearchWidget extends React.Component {
     const response = isQueryData ? false : queryData
 
     return (
-      <div>
+      <div className='relative'>
         <div className='input-group'>
           <span className='input-group-addon'>Search by Movie Name</span>
           <input
             type='text'
             className='form-input'
+            onKeyUp={this._handleKeyPress}
             onKeyPress={this._handleKeyPress}
+            onChange={this._handleKeyPress}
             ref={input => this.search = input}
           />
           {
@@ -70,13 +74,13 @@ class SearchWidget extends React.Component {
               </button>)
           }
         </div>
-        <div className='absolute'>
+        <div className='absolute' style={{ width: '100%' }}>
           {
             response && response.map((data) => (
               <ul className='menu'>
                 <PostLink
                   id={`${data.show.id}`}
-                  key={(data.id === undefined) ? data.show.id : data.id}
+                  key={`${data.id}`}
                   title={`${data.show.name}`}
                   genre={`${data.show.genres[0]}`}
                 />
