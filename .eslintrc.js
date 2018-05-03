@@ -16,6 +16,7 @@ module.exports = {
   "plugins": ["react"],
   "rules": {
     "indent": [2, 2],
+    "no-console": "off",
     "react/prop-types": 0,
     "react/jsx-uses-vars": [2]
   }

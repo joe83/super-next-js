@@ -18,6 +18,9 @@ module.exports = {
         loader: 'eslint-loader',
         options: {
           // eslint options (if necessary)
+          rules: {
+            "no-console": "off"
+          }
         }
       })
     }
