@@ -13,7 +13,8 @@
     "build": "next build",
     "export": "next export",
     "prod": "NODE_ENV=production node server.js",
-    "analyze": "cross-env ANALYZE=1 next build"
+    "analyze": "cross-env ANALYZE=1 next build",
+    "eslint": "./node_modules/.bin/eslint pages/ components/ libs/"
   },
   "keywords": [],
   "author": "",
@@ -30,7 +31,9 @@
     "webpack-bundle-analyzer": "^2.11.1"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
-    "eslint-loader": "^2.0.0"
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-react": "^7.7.0"
   }
 }
