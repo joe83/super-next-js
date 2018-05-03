@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import dayjs from 'dayjs'
 import fetch from 'isomorphic-unfetch'
 import { withRouter } from 'next/router'
@@ -42,7 +41,7 @@ class Index extends React.Component {
 
   _handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-     this._handleSearch()
+      this._handleSearch()
     }
   }
 
@@ -79,7 +78,7 @@ class Index extends React.Component {
           <li className='divider' data-content={`${miniTitle}`}/>
           {
             this.state.searchLoading
-            ?
+              ?
               (
                 <div className='centered'>
                   <div className='loading loading-lg'></div>
@@ -87,13 +86,13 @@ class Index extends React.Component {
               )
               :
               response.map((data) => (
-              <PostLink
-                id={`${data.show.id}`}
-                key={(data.id === undefined) ? data.show.id : data.id}
-                title={`${data.show.name}`}
-                genre={`${data.show.genres[0]}`}
-              />
-            ))
+                <PostLink
+                  id={`${data.show.id}`}
+                  key={(data.id === undefined) ? data.show.id : data.id}
+                  title={`${data.show.name}`}
+                  genre={`${data.show.genres[0]}`}
+                />
+              ))
           }
         </ul>
       </SuperLayout>

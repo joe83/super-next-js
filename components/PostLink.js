@@ -5,7 +5,7 @@ const PostLink = (props) => (
     <div className='menu-badge'>
       {
         (props.genre !== 'undefined')
-        ?
+          ?
           (<kbd>
             {props.genre}
           </kbd>)

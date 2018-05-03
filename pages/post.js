@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-unfetch'
-import Helmet from 'react-helmet'
 import { withRouter } from 'next/router'
 import SuperLayout from '../components/SuperLayout'
 import HelmetMeta from '../components/HelmetMeta'

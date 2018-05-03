@@ -1,4 +1,4 @@
-const TitleHeader = (props) => {
+const TitleHeader = () => {
   return (
     <strong>Super Next</strong>
   )
