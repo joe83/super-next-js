@@ -36,7 +36,7 @@ export default class extends Document {
     return (
       <html {...this.helmetHtmlAttrComponents}>
         <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           { this.helmetJsx }
           { this.helmetHeadComponents }
           <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css"/>
