@@ -2,7 +2,10 @@ const Footer = () => (
   <footer>
     <p>Designed and built with <span className="text-error">♥</span> by <a href="https://mkhuda.com" target="_blank">Muhammad K. Huda</a>.
       <br />
-    Fork this repo on <a href="https://github.com/mkhuda/super-next-js" target="_blank">Github</a>.</p>
+    Fork this repo on <a href="https://github.com/mkhuda/super-next-js" target="_blank">Github</a>.
+      <br />
+    Free API by <a href="https://www.tvmaze.com/api">TVmaze</a>
+    </p>
     <style jsx>{`
       footer {
         color: #acb3c2;
