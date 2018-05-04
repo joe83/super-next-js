@@ -66,7 +66,7 @@ class SearchWidget extends React.Component {
             <i className='icon icon-search'></i>
           </button>
         </div>
-        <div className='absolute' style={{ width: '100%' }}>
+        <div className='absolute' style={{ width: '100%', zIndex: 9999 }}>
           {
             response ?
               (<ul className='menu'>
