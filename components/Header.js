@@ -1,5 +1,11 @@
 import Link from 'next/link'
+import Router from 'next/router'
 import TitleHeader from './TitleHeader'
+import NProgress from 'nprogress'
+
+Router.onRouteChangeStart = () => NProgress.start()
+Router.onRouteChangeComplete = () => NProgress.done()
+Router.onRouteChangeError = () => NProgress.done()
 
 const linkStyle = {
   marginRight: 15
