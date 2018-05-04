@@ -5,10 +5,13 @@ import PostLink from '../components/PostLink'
 class SearchWidget extends React.Component {
 
   constructor(props) {
-    super(props);
+    super(props)
+    this.setStack = this.setStack.bind(this);
+    this._resetStack = this._resetStack.bind(this)
     this._handleInput = this._handleInput.bind(this)
     this._handleSearch = this._handleSearch.bind(this)
     this._handleKeyPress = this._handleKeyPress.bind(this)
+    this._handleOutsideClick = this._handleOutsideClick.bind(this)
     this.state = {
       searchLoading: false,
       searchQuery: '',
@@ -16,11 +19,29 @@ class SearchWidget extends React.Component {
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this._handleOutsideClick);
+  }
+
+  setStack = (node) => {
+    this.wrapperStack = node;
+  }
+
+  _resetStack = () => {
+    this.setState({
+      queryData: {}
+    })
+  }
+
+  _handleOutsideClick(event) {
+    if (this.wrapperStack && !this.wrapperStack.contains(event.target)) {
+      this._resetStack()
+    }
+  }
+
   _handleInput = (e) => {
     if (e.keyCode === 27) {
-      this.setState({
-        queryData: {}
-      })
+      this._resetStack()
     } else {
       this._handleSearch()
     }
@@ -52,7 +73,7 @@ class SearchWidget extends React.Component {
     const response = isQueryData ? false : queryData
 
     return (
-      <div className='relative'>
+      <div className='relative' ref={this.setStack}>
         <div className='input-group'>
           <span className='input-group-addon'>Search by Movie Name</span>
           <input
@@ -60,6 +81,7 @@ class SearchWidget extends React.Component {
             className='form-input'
             onKeyUp={this._handleInput}
             onKeyPress={this._handleKeyPress}
+            onFocus={this._handleInput}
             ref={input => this.search = input}
           />
           <button className='btn btn-primary input-group-btn' onClick={this._handleSearch}>
@@ -69,7 +91,7 @@ class SearchWidget extends React.Component {
         <div className='absolute' style={{ width: '100%', zIndex: 9999 }}>
           {
             response ?
-              (<ul className='menu'>
+              (<ul className='menu' onClick={this._resetStack}>
                 {
                   response && response.map((data) => (
                     <PostLink
