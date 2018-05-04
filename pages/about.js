@@ -7,7 +7,7 @@ import withDynamicFetch from '../hocs/withDynamicFetch'
 const About = () => (
   <SuperLayout>
     <HelmetMeta title='about'/>
-    <SearchWidget />
+    <SearchWidget/>
     <p>Hello All! Welcome to my Example Project using Next.JS</p>
   </SuperLayout>
 )

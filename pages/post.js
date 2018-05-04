@@ -3,11 +3,13 @@ import { withRouter } from 'next/router'
 import SuperLayout from '../components/SuperLayout'
 import HelmetMeta from '../components/HelmetMeta'
 import convertHttps from '../libs/convertHttps'
+import SearchWidget from '../components/SearchWidget'
 
 const Post = (props) => {
   return (
     <SuperLayout>
       <HelmetMeta title={props.data.name}/>
+      <SearchWidget/>
       <div className='card'>
         <div className='card-header'>
           <div className='card-title h5'>{props.data.name}</div>
