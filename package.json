@@ -4,7 +4,6 @@
   "description": "a Next JS based",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm install -g next",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
