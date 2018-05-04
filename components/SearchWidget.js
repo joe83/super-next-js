@@ -16,8 +16,14 @@ class SearchWidget extends React.Component {
     }
   }
 
-  _handleInput = () => {
-    // const searchValue = this.search.value
+  _handleInput = (e) => {
+    if (e.keyCode === 27) {
+      this.setState({
+        queryData: {}
+      })
+    } else {
+      this._handleSearch()
+    }
   }
 
   _handleSearch = async () => {
@@ -38,16 +44,10 @@ class SearchWidget extends React.Component {
     if (e.key === 'Enter') {
       this._handleSearch()
     }
-
-    if (e.keyCode === 27) {
-      this.setState({
-        queryData: {}
-      })
-    }
   }
 
   render() {
-    const { searchLoading, queryData } = this.state
+    const { queryData } = this.state
     const isQueryData = (Object.keys(queryData).length === 0)
     const response = isQueryData ? false : queryData
 
@@ -58,34 +58,31 @@ class SearchWidget extends React.Component {
           <input
             type='text'
             className='form-input'
-            onKeyUp={this._handleKeyPress}
+            onKeyUp={this._handleInput}
             onKeyPress={this._handleKeyPress}
-            onChange={this._handleKeyPress}
             ref={input => this.search = input}
           />
-          {
-            searchLoading ?
-              (<button className='btn btn-default disabled'>
-                <i className='icon icon-refresh'></i>
-              </button>)
-              :
-              (<button className='btn btn-primary input-group-btn' onClick={this._handleSearch}>
-                <i className='icon icon-search'></i>
-              </button>)
-          }
+          <button className='btn btn-primary input-group-btn' onClick={this._handleSearch}>
+            <i className='icon icon-search'></i>
+          </button>
         </div>
         <div className='absolute' style={{ width: '100%' }}>
           {
-            response && response.map((data) => (
-              <ul className='menu'>
-                <PostLink
-                  id={`${data.show.id}`}
-                  key={`${data.id}`}
-                  title={`${data.show.name}`}
-                  genre={`${data.show.genres[0]}`}
-                />
-              </ul>
-            ))
+            response ?
+              (<ul className='menu'>
+                {
+                  response && response.map((data) => (
+                    <PostLink
+                      id={`${data.show.id}`}
+                      key={`${data.show.id}`}
+                      title={`${data.show.name}`}
+                      genre={`${data.show.genres[0]}`}
+                    />
+                  ))
+                }
+              </ul>)
+              :
+              ''
           }
         </div>
       </div>
