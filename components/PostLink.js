@@ -15,7 +15,7 @@ const PostLink = (props) => (
           </label>)
       }
     </div>
-    <Link as={`p/${props.id}`} href={`/post?id=${props.id}`}>
+    <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
       <a><i className='icon icon-arrow-right'></i> {props.title}</a>
     </Link>
   </li>
