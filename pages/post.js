@@ -6,6 +6,8 @@ import convertHttps from '../libs/convertHttps'
 import SearchWidget from '../components/SearchWidget'
 
 const Post = (props) => {
+  const noImage = '/static/no-image.png'
+  const imageMedium = (props.data.image === null) ? noImage : convertHttps(props.data.image.medium)
   return (
     <SuperLayout>
       <HelmetMeta title={props.data.name}/>
@@ -23,7 +25,7 @@ const Post = (props) => {
         <div className='card-body'>
           <div className='columns'>
             <div className='column col-4 col-xs-12'>
-              <img className='img-responsive' src={convertHttps(props.data.image.medium)} />
+              <img className='img-responsive' src={imageMedium} />
             </div>
             <div className='column col-8 col-xs-12'>
               <div dangerouslySetInnerHTML={{ __html: props.data.summary }} />
