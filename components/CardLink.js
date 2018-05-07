@@ -1,24 +1,22 @@
 import Link from 'next/link'
 
 const CardLink = (props) => (
-  <li className='menu-item'>
-    <div className='menu-badge'>
-      {
-        (props.genre !== 'undefined')
-          ?
-          (<kbd>
-            {props.genre}
-          </kbd>)
-          :
-          (<label className='label label-default'>
-            No Genre
-          </label>)
-      }
+  <div className='column col-4 col-xs-12'>
+    <div className='card'>
+      <div className='card-image'>
+        <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
+          <a>
+            <img
+              className='img-responsive'
+              src={`${props.image}`}
+              alt={`${props.title}`}
+              title={`${props.title}`}
+            />
+          </a>
+        </Link>
+      </div>
     </div>
-    <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
-      <a><i className='icon icon-arrow-right'></i> {props.title}</a>
-    </Link>
-  </li>
+  </div>
 )
 
 export default CardLink
