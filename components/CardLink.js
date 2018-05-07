@@ -15,6 +15,15 @@ const CardLink = (props) => (
           </a>
         </Link>
       </div>
+      <div className='card-header'>
+        <div className='card-title h6'>{props.title}</div>
+        {
+          props.genre === 'undefined' ?
+            ''
+            :
+            (<span className='chip'>{props.genre}</span>)
+        }
+      </div>
     </div>
   </div>
 )
