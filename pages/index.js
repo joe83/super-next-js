@@ -3,9 +3,10 @@ import dayjs from 'dayjs'
 import fetch from 'isomorphic-unfetch'
 import { withRouter } from 'next/router'
 import HelmetMeta from '../components/HelmetMeta'
-import PostLink from '../components/PostLink'
+import CardLink from '../components/CardLink'
 import SuperLayout from '../components/SuperLayout'
 import SearchWidget from '../components/SearchWidget'
+import convertHttps from '../libs/convertHttps'
 
 class Index extends React.Component {
   static async getInitialProps() {
@@ -16,25 +17,26 @@ class Index extends React.Component {
   }
 
   render() {
-    const dayNow = dayjs().format('dddd, YYYY-MM-DD')
-    const miniTitle = `Latest movies on ${dayNow}`
+    // const dayNow = dayjs().format('dddd, YYYY-MM-DD')
+    // const miniTitle = `Latest movies on ${dayNow}`
+    const noImage = '/static/no-image.png'
     return (
       <SuperLayout>
         <HelmetMeta title='Home'/>
         <SearchWidget/>
-        <ul className='menu'>
-          <li className='divider' data-content={`${miniTitle}`}/>
+        <div className='columns'>
           {
             this.props.data.map((data) => (
-              <PostLink
+              <CardLink
                 id={`${data.show.id}`}
                 key={`${data.id}`}
+                image={`${data.show.image === null ? noImage : convertHttps(data.show.image.medium)}`}
                 title={`${data.show.name}`}
                 genre={`${data.show.genres[0]}`}
               />
             ))
           }
-        </ul>
+        </div>
       </SuperLayout>
     )
   }
