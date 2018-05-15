@@ -17,8 +17,6 @@ class Index extends React.Component {
   }
 
   render() {
-    // const dayNow = dayjs().format('dddd, YYYY-MM-DD')
-    // const miniTitle = `Latest movies on ${dayNow}`
     const noImage = '/static/no-image.png'
     return (
       <SuperLayout>
@@ -30,6 +28,7 @@ class Index extends React.Component {
               <CardLink
                 id={`${data.show.id}`}
                 key={`${data.id}`}
+                name={`${data.name}`}
                 image={`${data.show.image === null ? noImage : convertHttps(data.show.image.medium)}`}
                 title={`${data.show.name}`}
                 genre={`${data.show.genres[0]}`}

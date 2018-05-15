@@ -16,7 +16,11 @@ const CardLink = (props) => (
         </Link>
       </div>
       <div className='card-header'>
-        <div className='card-title h6'>{props.title}</div>
+        <div className='card-title h6'>
+          {props.title}
+          <br/>
+          <strong>{props.name}</strong>
+        </div>
         {
           props.genre === 'undefined' ?
             ''
