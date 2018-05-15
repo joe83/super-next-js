@@ -20,8 +20,8 @@ const Post = (props) => {
               props.data.genres.length === 0 ?
                 ''
                 :
-                props.data.genres.map(genre =>
-                  (<kbd>{genre}</kbd>)
+                props.data.genres.map((genre, index) =>
+                  (<kbd key={index}>{genre}</kbd>)
                 )
             }
             ({props.data.type})
