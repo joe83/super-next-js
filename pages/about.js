@@ -2,7 +2,6 @@ import { withRouter } from 'next/router'
 import HelmetMeta from '../components/HelmetMeta'
 import SuperLayout from '../components/SuperLayout'
 import SearchWidget from '../components/SearchWidget'
-import withDynamicFetch from '../hocs/withDynamicFetch'
 
 const About = () => (
   <SuperLayout>
@@ -12,4 +11,4 @@ const About = () => (
   </SuperLayout>
 )
 
-export default withRouter(withDynamicFetch(About))
+export default withRouter(About)
