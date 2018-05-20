@@ -75,9 +75,9 @@ class SearchWidget extends React.Component {
     return (
       <div className='relative' ref={this.setStack}>
         <div className='input-group'>
-          <span className='input-group-addon'>Search by Movie Name</span>
           <input
             type='text'
+            placeholder='Search Movie'
             className='form-input'
             onKeyUp={this._handleInput}
             onKeyPress={this._handleKeyPress}
