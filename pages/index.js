@@ -22,6 +22,10 @@ class Index extends React.Component {
       <SuperLayout>
         <HelmetMeta title='Home'/>
         <SearchWidget/>
+        <div className='divider'></div>
+        <div className='text-left'>Movie Today</div>
+        <div className='text-left'>{dayjs().format('dddd, MMMM DD YYYY')}</div>
+        <div className='divider'></div>
         <div className='columns'>
           {
             this.props.data.map((data) => (
