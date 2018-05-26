@@ -10,7 +10,7 @@ import convertHttps from '../libs/convertHttps'
 
 class Index extends React.Component {
   static async getInitialProps() {
-    const dayNow = dayjs().format('YYYY-MM-DD');
+    const dayNow = await dayjs().format('YYYY-MM-DD');
     const respond = await fetch(`https://api.tvmaze.com/schedule?country=US&date=${dayNow}`)
     const data = await respond.json()
     return { data }
