@@ -28,6 +28,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
+    "react-lazyload": "^2.3.0",
     "webpack-bundle-analyzer": "^2.13.1"
   },
   "devDependencies": {
