@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import LazyLoad from 'react-lazyload'
 
 const CardLink = (props) => (
   <div className='column col-4 col-xs-6'>
@@ -6,12 +7,14 @@ const CardLink = (props) => (
       <div className='card-image'>
         <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
           <a>
-            <img
-              className='img-responsive'
-              src={`${props.image}`}
-              alt={`${props.title}`}
-              title={`${props.title}`}
-            />
+            <LazyLoad height={200}>
+              <img
+                className='img-responsive'
+                src={`${props.image}`}
+                alt={`${props.title}`}
+                title={`${props.title}`}
+              />
+            </LazyLoad>
           </a>
         </Link>
       </div>
